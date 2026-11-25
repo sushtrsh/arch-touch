@@ -1,0 +1,54 @@
+%NAME%
+libnice
+
+%VERSION%
+0.1.24-1
+
+%BASE%
+libnice
+
+%DESC%
+Nice: GLib ICE library
+
+%URL%
+https://libnice.freedesktop.org/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1788323664
+
+%INSTALLDATE%
+1795515514
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+seattle@archlinuxarm.org>
+
+%SIZE%
+2099134
+
+%REASON%
+1
+
+%LICENSE%
+MPL-1.1 OR LGPL-2.1-only
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+glib2
+glibc
+gnutls
+gupnp-igd
+
+%OPTDEPENDS%
+gstreamer: "nice" GStreamer plugin
+
+%PROVIDES%
+libnice.so=10-64
+
+%XDATA%
+pkgtype=pkg
+

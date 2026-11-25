@@ -1,0 +1,15 @@
+# Wacom
+# Intuos 12x12
+# GD-1212
+
+[Device]
+Name=Wacom Intuos 12x12
+ModelName=GD-1212
+DeviceMatch=usb|056a|0023
+Class=Intuos
+Width=305
+Height=305
+Styli=@intuos-airbrush;@intuos;
+
+[Features]
+Stylus=true

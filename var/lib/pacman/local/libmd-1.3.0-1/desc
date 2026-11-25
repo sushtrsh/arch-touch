@@ -1,0 +1,45 @@
+%NAME%
+libmd
+
+%VERSION%
+1.3.0-1
+
+%BASE%
+libmd
+
+%DESC%
+Message Digest functions from BSD systems
+
+%URL%
+https://www.hadrons.org/software/libmd/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1791023713
+
+%INSTALLDATE%
+1795515516
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+seattle@archlinuxarm.org>
+
+%SIZE%
+125053
+
+%REASON%
+1
+
+%LICENSE%
+BSD-3-Clause AND BSD-2-Clause AND ISC AND Beerware AND CC-PDM-1.0
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+glibc
+
+%XDATA%
+pkgtype=pkg
+

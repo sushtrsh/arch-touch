@@ -1,0 +1,66 @@
+%NAME%
+vim
+
+%VERSION%
+9.2.1178-1
+
+%BASE%
+vim
+
+%DESC%
+Vi Improved, a highly configurable, improved version of the vi text editor
+
+%URL%
+https://www.vim.org
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1791847238
+
+%INSTALLDATE%
+1795515503
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+seattle@archlinuxarm.org>
+
+%SIZE%
+5723777
+
+%LICENSE%
+custom:vim
+
+%VALIDATION%
+pgp
+
+%REPLACES%
+vim-minimal
+
+%DEPENDS%
+vim-runtime=9.2.1178-1
+gpm
+acl
+glibc
+libgcrypt
+zlib
+
+%OPTDEPENDS%
+python: Python language support
+ruby: Ruby language support
+lua: Lua language support
+perl: Perl language support
+tcl: Tcl language support
+
+%CONFLICTS%
+gvim
+vim-minimal
+
+%PROVIDES%
+xxd
+vim-minimal
+vim-plugin-runtime
+
+%XDATA%
+pkgtype=split
+

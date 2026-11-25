@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: Xdamage
+Description: X Damage Library
+URL: https://gitlab.freedesktop.org/xorg/lib/libxdamage/
+Version: 1.1.7
+Requires: xproto damageproto >= 1.1 xfixes
+Requires.private: x11
+Libs: -L${libdir} -lXdamage
+Cflags: -I${includedir}

@@ -1,0 +1,68 @@
+%NAME%
+python
+
+%VERSION%
+3.14.10-1
+
+%BASE%
+python
+
+%DESC%
+The Python programming language
+
+%URL%
+https://www.python.org/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1794313324
+
+%INSTALLDATE%
+1795515506
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+n0@archlinuxarm.org>
+
+%SIZE%
+82718621
+
+%LICENSE%
+PSF-2.0
+
+%VALIDATION%
+pgp
+
+%REPLACES%
+python3
+python-externally-managed
+
+%DEPENDS%
+bzip2
+expat
+gdbm
+libffi
+libnsl
+libxcrypt
+openssl-3
+zlib
+tzdata
+mpdecimal
+zstd
+
+%OPTDEPENDS%
+python-setuptools: for building Python packages using tooling that is usually bundled with Python
+python-pip: for installing Python packages using tooling that is usually bundled with Python
+python-pipx: for installing Python software not packaged on Arch Linux
+sqlite: for a default database integration
+xz: for lzma
+tk: for tkinter
+
+%PROVIDES%
+python3
+python-externally-managed
+
+%XDATA%
+pkgtype=split
+

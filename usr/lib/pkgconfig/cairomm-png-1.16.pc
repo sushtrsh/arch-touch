@@ -1,0 +1,8 @@
+prefix=/usr
+includedir=${prefix}/include
+
+Name: cairomm-png
+Description: C++ wrapper for cairo - PNG functions
+Version: 1.18.1
+Requires: cairomm-1.16, cairo-png
+Cflags: -I${includedir}

@@ -1,0 +1,39 @@
+%NAME%
+mesa-docs
+
+%VERSION%
+1:27.0.0-92
+
+%BASE%
+mesa
+
+%DESC%
+Mesa's documentation
+
+%URL%
+https://www.mesa3d.org/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1794135857
+
+%INSTALLDATE%
+1795515569
+
+%PACKAGER%
+Unknown Packager
+
+%SIZE%
+53451048
+
+%LICENSE%
+MIT AND BSD-3-Clause AND SGI-B-2.0
+
+%VALIDATION%
+none
+
+%XDATA%
+pkgtype=split
+

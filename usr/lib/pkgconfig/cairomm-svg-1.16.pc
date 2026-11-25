@@ -1,0 +1,8 @@
+prefix=/usr
+includedir=${prefix}/include
+
+Name: cairomm-svg
+Description: C++ wrapper for cairo - SVG surface backend
+Version: 1.18.1
+Requires: cairomm-1.16, cairo-svg
+Cflags: -I${includedir}

@@ -1,0 +1,68 @@
+%NAME%
+avahi
+
+%VERSION%
+1:0.9rc5-2
+
+%BASE%
+avahi
+
+%DESC%
+Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour)
+
+%URL%
+https://github.com/avahi/avahi
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1792305947
+
+%INSTALLDATE%
+1795515514
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+seattle@archlinuxarm.org>
+
+%SIZE%
+2483774
+
+%REASON%
+1
+
+%LICENSE%
+LGPL-2.1-or-later
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+bash
+dbus
+expat
+gdbm
+glib2
+glibc
+libcap
+libdaemon
+systemd-libs
+libdbus-1.so=3-64
+
+%OPTDEPENDS%
+avahi-bookmarks: avahi-bookmarks
+avahi-gtk: avahi-discover, avahi-discover-standalone, bshell, bssh, bvnc
+nss-mdns: NSS support for mDNS
+python-dbus: Python bindings
+
+%PROVIDES%
+libavahi-client.so=3-64
+libavahi-common.so=3-64
+libavahi-core.so=7-64
+libavahi-glib.so=1-64
+libavahi-gobject.so=0-64
+libdns_sd.so=1-64
+
+%XDATA%
+pkgtype=split
+

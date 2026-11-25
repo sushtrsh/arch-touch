@@ -1,0 +1,10 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: glycin-2
+Description: Glycin: Sandboxed and extendable image decoding
+Version: 2.2.6
+Requires: gio-2.0 >= 2.60, fontconfig >=  2.13.0, libseccomp >=  2.5.0
+Libs: -L${libdir} -lglycin-2
+Cflags: -I${includedir}/glycin-2

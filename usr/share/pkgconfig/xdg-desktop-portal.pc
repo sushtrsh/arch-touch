@@ -1,0 +1,9 @@
+
+prefix=/usr
+datarootdir=/usr/share
+datadir=${prefix}/share
+interfaces_dir=${datadir}/dbus-1/interfaces/
+
+Name: xdg-desktop-portal
+Description: Desktop integration portal
+Version: 1.22.1

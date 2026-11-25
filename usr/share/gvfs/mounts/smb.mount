@@ -1,0 +1,5 @@
+[Mount]
+Type=smb-share
+Exec=/usr/lib/gvfsd-smb
+AutoMount=false
+Scheme=smb

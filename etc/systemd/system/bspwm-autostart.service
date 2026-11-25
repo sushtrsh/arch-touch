@@ -1,0 +1,17 @@
+[Unit]
+Description=bspwm touch desktop on Termux:X11 (Droidspaces)
+After=graphical.target dbus.service systemd-logind.service
+ConditionPathExists=/run/droidspaces/container.config
+
+[Service]
+Type=simple
+User=root
+# bspwm-start waits for the X server itself, so only the X11 flag is gated here.
+ExecCondition=/bin/sh -c "grep -qE '^enable_(termux_)?x11=1' /run/droidspaces/container.config"
+ExecStart=/usr/local/bin/bspwm-start
+Restart=always
+RestartSec=3
+TimeoutStopSec=10
+
+[Install]
+WantedBy=graphical.target

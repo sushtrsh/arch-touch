@@ -1,0 +1,8 @@
+prefix=/usr
+includedir=${prefix}/include
+
+Name: cairomm-xlib
+Description: C++ wrapper for cairo - Xlib surface backend
+Version: 1.18.1
+Requires: cairomm-1.16, cairo-xlib
+Cflags: -I${includedir}

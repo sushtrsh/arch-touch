@@ -1,0 +1,8 @@
+prefix=/usr
+includedir=${prefix}/include
+
+Name: cairomm-pdf
+Description: C++ wrapper for cairo - PDF surface backend
+Version: 1.18.1
+Requires: cairomm-1.16, cairo-pdf
+Cflags: -I${includedir}

@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: Xrender
+Description: X Render Library
+URL: https://gitlab.freedesktop.org/xorg/lib/libxrender/
+Version: 0.9.13
+Requires: xproto renderproto >= 0.9 x11
+Libs: -L${libdir} -lXrender
+Cflags: -I${includedir}

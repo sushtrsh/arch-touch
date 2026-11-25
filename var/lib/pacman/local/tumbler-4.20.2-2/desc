@@ -1,0 +1,55 @@
+%NAME%
+tumbler
+
+%VERSION%
+4.20.2-2
+
+%BASE%
+tumbler
+
+%DESC%
+Thumbnail service implementing the thumbnail management D-Bus specification
+
+%URL%
+https://docs.xfce.org/xfce/tumbler/start
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1789851492
+
+%INSTALLDATE%
+1795515516
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+seattle@archlinuxarm.org>
+
+%SIZE%
+1471882
+
+%GROUPS%
+xfce4
+
+%LICENSE%
+GPL-2.0-or-later
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+libxfce4util
+gdk-pixbuf2
+hicolor-icon-theme
+
+%OPTDEPENDS%
+ffmpegthumbnailer: audio and video thumbnails
+poppler-glib: PDF thumbnails
+libgsf: ODF thumbnails
+libgepub: EPUB thumbnails
+libopenraw: RAW thumbnails
+freetype2: font thumbnails
+
+%XDATA%
+pkgtype=pkg
+

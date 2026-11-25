@@ -1,0 +1,15 @@
+# Active electrostatic (AES) sensor used by the Toshiba dynabook KIRA L93/39M
+
+[Device]
+Name=Wacom ISDv4 5013
+ModelName=
+DeviceMatch=i2c|056a|5013
+Class=ISDV4
+Width=305
+Height=178
+IntegratedIn=Display;System
+Styli=@isdv4-aes;
+
+[Features]
+Stylus=true
+Touch=true

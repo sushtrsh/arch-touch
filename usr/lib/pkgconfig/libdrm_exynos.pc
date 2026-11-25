@@ -1,0 +1,11 @@
+prefix=/usr
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: libdrm_exynos
+Description: Userspace interface to exynos kernel DRM services
+Version: 0.7
+Requires.private: libdrm
+Libs: -L${libdir} -ldrm_exynos
+Libs.private: -pthread
+Cflags: -I${includedir} -I${includedir}/libdrm -I${includedir}/exynos

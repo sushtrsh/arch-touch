@@ -1,0 +1,45 @@
+%NAME%
+python-packaging
+
+%VERSION%
+26.4-1
+
+%BASE%
+python-packaging
+
+%DESC%
+Core utilities for Python packages
+
+%URL%
+https://github.com/pypa/packaging
+
+%ARCH%
+any
+
+%BUILDDATE%
+1795497651
+
+%INSTALLDATE%
+1795515506
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+n1@archlinuxarm.org>
+
+%SIZE%
+1779146
+
+%REASON%
+1
+
+%LICENSE%
+Apache-2.0 OR BSD-2-Clause
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+python
+
+%XDATA%
+pkgtype=pkg
+

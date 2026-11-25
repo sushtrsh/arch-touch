@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: BlockDev
+Description: Library for doing low-level operations with block devices
+URL: https://github.com/storaged-project/libblockdev
+Version: 3.6.0
+Requires: glib-2.0
+Libs: -L${libdir} -lblockdev
+Cflags: -I${includedir}

@@ -1,0 +1,8 @@
+prefix=/usr
+includedir=${prefix}/include
+
+Name: cairomm-ft
+Description: C++ wrapper for cairo - FreeType font backend
+Version: 1.18.1
+Requires: cairomm-1.16, cairo-ft
+Cflags: -I${includedir}

@@ -1,0 +1,81 @@
+%NAME%
+gvfs
+
+%VERSION%
+1.62.0-3
+
+%BASE%
+gvfs
+
+%DESC%
+Virtual filesystem implementation for GIO
+
+%URL%
+https://gitlab.gnome.org/GNOME/gvfs
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1791428930
+
+%INSTALLDATE%
+1795515517
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+n1@archlinuxarm.org>
+
+%SIZE%
+6078317
+
+%GROUPS%
+gnome
+
+%LICENSE%
+LGPL-2.0-only
+
+%VALIDATION%
+pgp
+
+%REPLACES%
+gvfs-google<=1.58.3-1
+
+%DEPENDS%
+dconf
+fuse3
+gcr-4
+glib2
+glibc
+gsettings-desktop-schemas
+libarchive
+libbluray
+libcdio
+libcdio-paranoia
+libgcc
+libgcrypt
+libgudev
+libsecret
+libsoup3
+polkit
+procps-ng
+systemd
+systemd-libs
+udisks2
+
+%OPTDEPENDS%
+gvfs-afc: AFC support (Apple mobile devices)
+gvfs-dnssd: DNS-SD and WebDAV support (macOS file sharing)
+gvfs-goa: Gnome Online Accounts support (e.g. OwnCloud)
+gvfs-gphoto2: gphoto2 support (PTP camera, MTP media player)
+gvfs-mtp: MTP support (Android, media player)
+gvfs-nfs: NFS support
+gvfs-onedrive: Microsoft OneDrive support
+gvfs-smb: SMB/CIFS support (Windows file sharing)
+gvfs-wsdd: Web Services Dynamic Discovery support (Windows discovery)
+
+%CONFLICTS%
+gvfs-google<=1.58.3-1
+
+%XDATA%
+pkgtype=split
+

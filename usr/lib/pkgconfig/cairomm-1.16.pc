@@ -1,0 +1,19 @@
+prefix=/usr
+datadir=${prefix}/share
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+exec_prefix=${prefix}
+datarootdir=${datadir}
+docdir=${datadir}/doc/cairomm-1.16
+doxytagfile=${docdir}/reference/cairomm-1.16.tag
+htmlrefdir=${docdir}/reference/html
+htmlrefpub=https://cairo.pages.freedesktop.org/cairomm
+
+Name: cairomm
+Description: C++ binding for the cairo graphics library
+URL: https://www.cairographics.org/cairomm/
+Version: 1.18.1
+Requires: sigc++-3.0 >=  3.0.0, cairo >=  1.14.0
+Libs: -L${libdir} -lcairomm-1.16
+Cflags: -I${includedir}/cairomm-1.16 -I${libdir}/cairomm-1.16/include

@@ -1,0 +1,55 @@
+%NAME%
+libxkbcommon
+
+%VERSION%
+1.13.2-1
+
+%BASE%
+libxkbcommon
+
+%DESC%
+Keymap handling library for toolkits and window systems
+
+%URL%
+https://xkbcommon.org/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1780445049
+
+%INSTALLDATE%
+1795515514
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+n0@archlinuxarm.org>
+
+%SIZE%
+1640479
+
+%REASON%
+1
+
+%LICENSE%
+MIT
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+glibc
+libxml2
+xkeyboard-config
+
+%OPTDEPENDS%
+libxkbcommon-x11: xkbcli interactive-x11
+wayland: xkbcli interactive-wayland
+
+%PROVIDES%
+libxkbcommon.so=0-64
+libxkbregistry.so=0-64
+
+%XDATA%
+pkgtype=split
+

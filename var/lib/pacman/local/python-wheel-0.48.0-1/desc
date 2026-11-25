@@ -1,0 +1,51 @@
+%NAME%
+python-wheel
+
+%VERSION%
+0.48.0-1
+
+%BASE%
+python-wheel
+
+%DESC%
+A built-package format for Python
+
+%URL%
+https://pypi.python.org/pypi/wheel
+
+%ARCH%
+any
+
+%BUILDDATE%
+1786528679
+
+%INSTALLDATE%
+1795515506
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+seattle@archlinuxarm.org>
+
+%SIZE%
+354987
+
+%REASON%
+1
+
+%LICENSE%
+MIT
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+python
+python-packaging
+
+%OPTDEPENDS%
+python-keyring: for wheel.signatures
+python-xdg: for wheel.signatures
+python-setuptools: for legacy bdist_wheel subcommand
+
+%XDATA%
+pkgtype=pkg
+

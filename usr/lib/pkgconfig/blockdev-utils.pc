@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: BlockDev-utils
+Description: A library with utility functions used by the libblockdev library
+URL: https://github.com/storaged-project/libblockdev
+Version: 3.6.0
+Requires: glib-2.0
+Libs: -L${libdir} -lbd_utils
+Cflags: -I${includedir}

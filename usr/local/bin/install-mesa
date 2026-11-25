@@ -1,0 +1,128 @@
+#!/bin/bash
+
+set -e
+
+REPO="lfdevs/mesa-for-android-container"
+
+# Must run as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "Error: This script must be run as root (or with sudo)."
+    exit 1
+fi
+
+# Detect OS
+if [ ! -f /etc/os-release ]; then
+    echo "Error: /etc/os-release not found."
+    exit 1
+fi
+
+. /etc/os-release
+
+# Arch has no VERSION_CODENAME, so the subject reads "archarm:" there.
+case "${ID}:${VERSION_CODENAME}" in
+    ubuntu:noble)   DISTRO_TAG="ubuntu_noble" ;;
+    debian:trixie)  DISTRO_TAG="debian_trixie" ;;
+    kali:*|kali:kali-rolling) DISTRO_TAG="debian_trixie" ;;
+    arch:*|archarm:*) DISTRO_TAG="archlinux" ;;
+    *)
+        echo "Error: Unsupported OS: ${PRETTY_NAME:-${ID}}"
+        echo "Only Ubuntu 24.04 (noble), Debian 13 (trixie), Kali Linux (rolling) and Arch Linux are supported."
+        exit 1
+        ;;
+esac
+
+# Detect architecture
+case "$(uname -m)" in
+    aarch64) ARCH_TAG="arm64" ;;
+    *)
+        echo "Error: Unsupported architecture: $(uname -m). Only arm64 is supported."
+        exit 1
+        ;;
+esac
+
+MESA_PACKAGES="libgl1-mesa-dri libglx-mesa0 libegl-mesa0 mesa-vulkan-drivers mesa-utils libgbm1"
+# Arch: the release replaces the repo's mesa outright, so only the bits it does not
+# ship are pulled from the repos. ARCH_HOLD is every package name inside the archive.
+ARCH_PACKAGES="python mesa-utils vulkan-icd-loader vulkan-tools"
+ARCH_HOLD="mesa mesa-docs vulkan-freedreno vulkan-mesa-layers vulkan-mesa-implicit-layers"
+
+# Add a setting to the FIRST [options] section of pacman.conf - the Arch Linux ARM
+# image carries two - unless that key is already set there.
+pacman_conf_add() { # pacman_conf_add KEY VALUE
+    grep -q "^$1 *=" /etc/pacman.conf && return 0
+    sed -i "0,/^\\[options\\]/s//&\n$1 = $2/" /etc/pacman.conf
+}
+
+echo "Detected: ${PRETTY_NAME} (${ARCH_TAG})"
+
+# Install the system packages first so dependencies are always satisfied
+if [ "$DISTRO_TAG" = archlinux ]; then
+    echo "Syncing pacman databases..."
+    pacman -Sy --noconfirm
+    pacman -S --noconfirm --needed $ARCH_PACKAGES
+else
+    echo "Installing system mesa packages..."
+    apt-get update
+    apt-get install -y --no-install-recommends python3 $MESA_PACKAGES
+fi
+
+# No GitHub API here: unauthenticated calls to it share one rate limit per IP,
+# and GitHub-hosted runners burn through it, so CI died with "403 rate limit
+# exceeded". The releases/latest redirect and the download URL need no API.
+# Assets are named mesa-for-android-container_<version>_<distro>_<arch>, where
+# <version> is the tag without its "mesa-" prefix; Arch's is a plain .tar.
+echo "Resolving the latest release of ${REPO}..."
+TAG=$(curl -fsSLI -o /dev/null -w '%{url_effective}' "https://github.com/${REPO}/releases/latest")
+TAG=${TAG##*/}
+[ -n "$TAG" ] || { echo "Error: could not resolve the latest release"; exit 1; }
+echo "Latest release: ${TAG}"
+EXT=.tar.gz
+[ "$DISTRO_TAG" = archlinux ] && EXT=.tar
+DOWNLOAD_URL="https://github.com/${REPO}/releases/download/${TAG}/mesa-for-android-container_${TAG#mesa-}_${DISTRO_TAG}_${ARCH_TAG}${EXT}"
+
+FILENAME=$(basename "$DOWNLOAD_URL")
+echo "Found: ${FILENAME}"
+
+# Download to a temp dir, clean up on exit
+TMPDIR=$(mktemp -d)
+trap 'rm -rf "$TMPDIR"' EXIT
+
+echo "Downloading..."
+curl -fL --progress-bar -o "${TMPDIR}/${FILENAME}" "$DOWNLOAD_URL"
+
+if [ "$DISTRO_TAG" = archlinux ]; then
+    # The archlinux asset is an archive of makepkg packages, not a rootfs overlay.
+    # They carry no signature, and pacman.conf leaves LocalFileSigLevel commented out
+    # so it inherits "Required" from SigLevel. Relax it for local files only - packages
+    # coming from the repos still need a valid signature.
+    echo "Installing packages with pacman..."
+    pacman_conf_add LocalFileSigLevel Optional
+    mkdir -p "${TMPDIR}/pkgs"
+    tar -xf "${TMPDIR}/${FILENAME}" -C "${TMPDIR}/pkgs"
+    pacman -U --noconfirm "${TMPDIR}"/pkgs/*.pkg.tar.xz
+else
+    echo "Extracting to /..."
+    case "$FILENAME" in
+        *.tar.gz) tar -zxf "${TMPDIR}/${FILENAME}" -C / ;;
+        *.tar)    tar -xf  "${TMPDIR}/${FILENAME}" -C / ;;
+        *)
+            echo "Error: Unknown archive format: ${FILENAME}"
+            exit 1
+            ;;
+    esac
+fi
+
+echo "Running ldconfig..."
+ldconfig
+
+# Hold the mesa packages so a later upgrade cannot overwrite the custom drivers
+if [ "$DISTRO_TAG" = archlinux ]; then
+    echo "Holding mesa packages in pacman (IgnorePkg)..."
+    pacman_conf_add IgnorePkg "$ARCH_HOLD"
+else
+    # Packages stay installed so dependencies remain satisfied.
+    echo "Holding system mesa packages in APT..."
+    apt-mark hold $MESA_PACKAGES
+fi
+
+echo "Done. Mesa installed successfully."

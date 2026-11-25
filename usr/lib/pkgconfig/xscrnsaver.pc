@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: XScrnSaver
+Description: The XScrnSaver Library
+URL: https://gitlab.freedesktop.org/xorg/lib/libXScrnSaver/
+Version: 1.2.5
+Requires: scrnsaverproto >=  1.2
+Requires.private: x11 xext
+Libs: -L${libdir} -lXss
+Cflags: -I${includedir}

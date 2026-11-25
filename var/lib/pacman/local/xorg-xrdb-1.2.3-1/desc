@@ -1,0 +1,52 @@
+%NAME%
+xorg-xrdb
+
+%VERSION%
+1.2.3-1
+
+%BASE%
+xorg-xrdb
+
+%DESC%
+X server resource database utility
+
+%URL%
+https://xorg.freedesktop.org/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1783698174
+
+%INSTALLDATE%
+1795515516
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+n0@archlinuxarm.org>
+
+%SIZE%
+74773
+
+%GROUPS%
+xorg-apps
+xorg
+
+%LICENSE%
+MIT-open-group
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+libx11
+libxmu
+glibc
+
+%OPTDEPENDS%
+gcc: for preprocessing
+mcpp: a lightweight alternative for preprocessing
+
+%XDATA%
+pkgtype=pkg
+

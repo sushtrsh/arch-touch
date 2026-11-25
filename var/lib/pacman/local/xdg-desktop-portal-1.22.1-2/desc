@@ -1,0 +1,63 @@
+%NAME%
+xdg-desktop-portal
+
+%VERSION%
+1.22.1-2
+
+%BASE%
+xdg-desktop-portal
+
+%DESC%
+Desktop integration portals for sandboxed apps
+
+%URL%
+https://flatpak.github.io/xdg-desktop-portal/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1782067102
+
+%INSTALLDATE%
+1795515515
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+n0@archlinuxarm.org>
+
+%SIZE%
+3099143
+
+%REASON%
+1
+
+%LICENSE%
+LGPL-2.1-or-later
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+fuse3
+gdk-pixbuf2
+glib2
+glibc
+gst-plugins-base-libs
+gstreamer
+json-glib
+libgcc
+libgudev
+libpipewire
+pipewire
+systemd
+systemd-libs
+
+%OPTDEPENDS%
+gamemode: GameMode portal
+geoclue: Location portal
+rtkit: Realtime portal
+xdg-desktop-portal-impl: Portal backends
+
+%XDATA%
+pkgtype=pkg
+

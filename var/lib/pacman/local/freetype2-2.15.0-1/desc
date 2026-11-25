@@ -1,0 +1,55 @@
+%NAME%
+freetype2
+
+%VERSION%
+2.15.0-1
+
+%BASE%
+freetype2
+
+%DESC%
+Font rasterization library
+
+%URL%
+https://www.freetype.org/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1792152425
+
+%INSTALLDATE%
+1795515508
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+n0@archlinuxarm.org>
+
+%SIZE%
+1748172
+
+%REASON%
+1
+
+%LICENSE%
+FTL OR GPL-2.0-or-later
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+brotli
+bzip2
+glibc
+libpng
+zlib
+
+%OPTDEPENDS%
+harfbuzz: Improved autohinting
+
+%PROVIDES%
+libfreetype.so=6-64
+
+%XDATA%
+pkgtype=split
+

@@ -1,0 +1,75 @@
+%NAME%
+libheif
+
+%VERSION%
+1.23.7-1
+
+%BASE%
+libheif
+
+%DESC%
+An HEIF and AVIF file format decoder and encoder
+
+%URL%
+https://github.com/strukturag/libheif
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1793114295
+
+%INSTALLDATE%
+1795515517
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+n1@archlinuxarm.org>
+
+%SIZE%
+3659438
+
+%REASON%
+1
+
+%LICENSE%
+LGPL-3.0-or-later
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+aom
+libaom.so=3-64
+glibc
+libgcc_s.so=1-64
+libde265
+libgcc
+libgcc_s.so=1-64
+libstdc++
+libstdc++.so=6-64
+libwebp
+libsharpyuv.so=0-64
+openh264
+libopenh264.so=8-64
+openh264
+libopenh264.so=8-64
+x264
+libx264.so=165-64
+x265
+libx265.so=217-64
+
+%OPTDEPENDS%
+libjpeg-turbo: for heif-dec and heif-enc
+libpng: for heif-dec and heif-enc
+libtiff: for heif-dec and heif-enc
+dav1d: dav1d encoder
+ffmpeg: hardware decode
+openjpeg2: JPEG2000 decoder
+rav1e: rav1e encoder
+
+%PROVIDES%
+libheif.so=1-64
+
+%XDATA%
+pkgtype=pkg
+

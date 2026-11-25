@@ -1,0 +1,1 @@
+/usr/share/doc/libmpdclient/BSD-3-Clause.txt

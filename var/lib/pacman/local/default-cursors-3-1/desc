@@ -1,0 +1,45 @@
+%NAME%
+default-cursors
+
+%VERSION%
+3-1
+
+%BASE%
+default-cursors
+
+%DESC%
+Default cursor set
+
+%URL%
+https://archlinux.org
+
+%ARCH%
+any
+
+%BUILDDATE%
+1726874838
+
+%INSTALLDATE%
+1795515513
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+seattle@archlinuxarm.org>
+
+%SIZE%
+30
+
+%REASON%
+1
+
+%LICENSE%
+CC0-1.0
+
+%VALIDATION%
+pgp
+
+%OPTDEPENDS%
+adwaita-cursors: default cursor theme
+
+%XDATA%
+pkgtype=pkg
+

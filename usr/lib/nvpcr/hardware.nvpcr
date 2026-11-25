@@ -1,0 +1,7 @@
+{
+    "name" : "hardware",
+    "algorithm" : "sha256",
+    "nvIndex" : 30474752,
+    "priority" : 500,
+    "orderly" : false
+}

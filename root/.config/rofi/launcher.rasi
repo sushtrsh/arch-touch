@@ -1,0 +1,31 @@
+@import "config.rasi"
+
+/* Grid app drawer theme */
+
+window {
+    width: 90%;
+    border-radius: 20px;
+}
+
+listview {
+    columns: 3;
+    lines: 4;
+    spacing: 12px;
+    fixed-height: false;
+}
+
+element {
+    orientation: vertical;
+    padding: 16px 8px;
+    border-radius: 14px;
+}
+
+element-icon {
+    size: 48px;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    padding: 6px 0 0 0;
+}

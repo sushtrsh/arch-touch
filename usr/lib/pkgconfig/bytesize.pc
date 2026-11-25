@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: ByteSize
+Description: Library for working with sizes in bytes
+URL: https://github.com/storaged-project/libbytesize
+Version: 2.12
+Cflags: -I${includedir}/bytesize
+Libs: -lbytesize
+Libs.private: -lgmp -lmpfr

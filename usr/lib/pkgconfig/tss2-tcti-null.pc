@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: tss2-tcti-null
+Description: TCTI library which only provides TCTI initialization.
+URL: https://github.com/tpm2-software/tpm2-tss
+Version: 4.2.2s
+Requires.private: tss2-tctildr
+Cflags: -I${includedir}
+Libs: -ltss2-tcti-null -L${libdir}

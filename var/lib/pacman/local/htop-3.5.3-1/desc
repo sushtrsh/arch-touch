@@ -1,0 +1,51 @@
+%NAME%
+htop
+
+%VERSION%
+3.5.3-1
+
+%BASE%
+htop
+
+%DESC%
+Interactive process viewer
+
+%URL%
+https://htop.dev/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1786914181
+
+%INSTALLDATE%
+1795515502
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+seattle@archlinuxarm.org>
+
+%SIZE%
+492703
+
+%LICENSE%
+GPL
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+libcap
+libcap.so=2-64
+libnl
+ncurses
+libncursesw.so=6-64
+
+%OPTDEPENDS%
+lm_sensors: show cpu temperatures
+lsof: show files opened by a process
+strace: attach to a running process
+
+%XDATA%
+pkgtype=pkg
+

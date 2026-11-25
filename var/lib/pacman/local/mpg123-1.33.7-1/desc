@@ -1,0 +1,57 @@
+%NAME%
+mpg123
+
+%VERSION%
+1.33.7-1
+
+%BASE%
+mpg123
+
+%DESC%
+Console based real time MPEG Audio Player for Layer 1, 2 and 3
+
+%URL%
+https://mpg123.de/
+
+%ARCH%
+aarch64
+
+%BUILDDATE%
+1786168265
+
+%INSTALLDATE%
+1795515507
+
+%PACKAGER%
+Arch Linux ARM Build System <builder+n0@archlinuxarm.org>
+
+%SIZE%
+1764948
+
+%REASON%
+1
+
+%LICENSE%
+LGPL-2.1-only
+
+%VALIDATION%
+pgp
+
+%DEPENDS%
+alsa-lib
+glibc
+
+%OPTDEPENDS%
+sdl2-compat: for sdl audio support
+jack: for jack audio support
+libpulse: for pulse audio support
+perl: for conplay
+
+%PROVIDES%
+libmpg123.so=0-64
+libout123.so=0-64
+libsyn123.so=0-64
+
+%XDATA%
+pkgtype=pkg
+
